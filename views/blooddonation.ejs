@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Apply for Blood Donation Online!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/aos.css">
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+  <div class="site-wrap" id="home-section">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+
+    <header class="site-navbar site-navbar-target" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center position-relative">
+
+          <div class="col-3">
+            <div class="site-logo">
+              <a href="index.html">Haemotology<span class="text-primary">.</span> </a>
+            </div>
+          </div>
+
+          <div class="col-9 text-right">
+
+            <span class="d-inline-block d-lg-none"><a href="#" class=" site-menu-toggle js-menu-toggle py-5 "><span class="icon-menu h3 text-white"></span></a></span>
+
+
+            <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                <li><a href="BloodBankHome.html" class="nav-link">Blood Bank Home</a></li>
+                <li class="active"><a href="dummydonation.html" class="nav-link">Donate Blood</a></li>
+                <li><a href="dummyreceiver.html" class="nav-link">Receive Blood</a></li>
+                <li><a href="blood-bank-employee-login.html" class="nav-link">Blood Bank Login</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+
+
+        </div>
+      </div>
+
+    </header>
+
+
+    <div class="hero" style="background-image: url('images/hero_bg_1.jpg');"> <!--put own background image here-->
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-8 intro text-center">
+            <h1 class="text-white">Want to Donate Blood? Apply here!</h1>
+            <a href="index.html">Home</a> <span class="mx-3 text-white">/</span> <strong class="text-white">Donate Blood</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section">
+      <div class="container">
+        <% if(error == ""){} else{ %>
+          <h4 style="color: red; text-align: center;"><%= error %></h4>
+        <% } %>
+        <% if(status == ""){} else{ %>
+          <h4 style="color: green; text-align: center;"><%= status %></h4>
+        <% } %>
+        <form action="donationregister" method="post" class="row g-3">
+          <div class="col-md-6">
+            <label for="FirstNameBloodDonation" class="form-label">First Name <span style="color: red;">*</span></label>
+            <input type="text" class="form-control" id="FirstNameBloodDonation" name="FirstNameBloodDonation" placeholder="FirstName" required>
+          </div>
+          <div class="col-md-6">
+            <label for="LastNameBloodDonation" class="form-label">Last Name</label>
+            <input type="text" class="form-control" placeholder="LastName" id="LastNameBloodDonation" name="LastNameBloodDonation">
+          </div>
+
+          <div class="col-md-6">
+            <br />
+            <label class="form-label">
+              Age<span style="color: red;">*</span>
+            </label>
+            <input type="number" class="form-control" placeholder="18 years" min="18" max="65" id="AgeBloodDonation" name="AgeBloodDonation" required />
+
+          </div>
+          <div class="col-md-6">
+            <br />
+            <label class="form-label">
+              Blood Group<span style="color: red;">*</span>
+            </label>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="BloodGroupBloodDonation" id="APOSBloodDonation" value="A+">
+                  <label class="form-check-label" for="APOSBloodDonation">
+                    A+
+                  </label>
+                </div>
+                </div>  
+                
+                <div class="col-md-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="BloodGroupBloodDonation" id="BPOSBloodDonation" value="B+">
+                    <label class="form-check-label" for="BPOSBloodDonation">
+                      B+
+                    </label>
+                  </div>
+                  </div>  
+
+                  <div class="col-md-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="BloodGroupBloodDonation" id="OPOSBloodDonation" value="O+">
+                      <label class="form-check-label" for="OPOSBloodDonation">
+                        O+
+                      </label>
+                    </div>
+                    </div>
+
+                    <div class="col-md-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="BloodGroupBloodDonation" id="ABPOSBloodDonation" value="AB+">
+                        <label class="form-check-label" for="ABPOSBloodDonation">
+                          AB+
+                        </label>
+                      </div>
+                      </div>                   
+          
+            </div> 
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="BloodGroupBloodDonation" id="ANEGBloodDonation" value="A-">
+                  <label class="form-check-label" for="ANEGBloodDonation">
+                    A-
+                  </label>
+                </div>
+                </div>  
+                
+                <div class="col-md-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="BloodGroupBloodDonation" id="BNEGBloodDonation" value="B-">
+                    <label class="form-check-label" for="BNEGBloodDonation">
+                      B-
+                    </label>
+                  </div>
+                  </div>  
+
+                  <div class="col-md-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="BloodGroupBloodDonation" id="ONEGBloodDonation" value="O-">
+                      <label class="form-check-label" for="ONEGBloodDonation">
+                        O-
+                      </label>
+                    </div>
+                    </div>
+
+                    <div class="col-md-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="BloodGroupBloodDonation" id="ABNEGBloodDonation" value="AB-">
+                        <label class="form-check-label" for="ABNEGBloodDonation">
+                          AB-
+                        </label>
+                      </div>
+                      </div>                   
+          
+            </div>     
+          </div>
+          <div class="col-md-6">
+            <br />
+            <label class="form-label">
+              Mobile<span style="color: red;">*</span>
+            </label>
+            <input type="number" class="form-control" id="MobileBloodDonation" name="MobileBloodDonation" placeholder="9876543210" oninput="check_phone(this)" required />
+
+          </div>
+          <div class="col-md-6">
+            <br />
+            <label class="form-label">
+              E-mail<span style="color: red;">*</span>
+            </label>
+            <input type="email" class="form-control" placeholder="someone@example.com" name="EmailBloodDonation" id="EmailBloodDonation" oninput="check_email(this)" required />
+
+          </div>
+          <div class="col-md-6">
+            <br />
+            <label class="form-label">
+              Set Password<span style="color: red;">*</span>
+            </label>
+            <input type="password" class="form-control" name="SetPasswordBloodDonation" id="SetPasswordBloodDonation" oninput="match_password(this)" required />
+            
+
+          </div>
+          <div class="col-md-6">
+            <br />
+            <label class="form-label">
+              Confirm Password<span style="color: red;">*</span>
+            </label>
+            <input type="password" class="form-control" name="ConfirmPasswordBloodDonation" id="ConfirmPasswordBloodDonation"  oninput="match_password(this)" required />
+
+          </div>
+          <div class="col-md-12">
+            <br />
+            <label class="form-label">Address<span style="color: red;">*</span></label>
+            <input type="text" class="form-control" placeholder="Address Line 1"  id="AddressLine1BloodDonation" name="AddressLine1BloodDonation"  required/>
+            <br />
+            <span>
+              <input type="text" class="form-control" placeholder="Address Line 2" id="AddressLine2BloodDonation" name="AddressLine2BloodDonation"   required>
+            </span>
+            <br />
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="City" id="CityBloodDonation" name="CityBloodDonation" required>
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="State" id="StateBloodDonation" name="StateBloodDonation" required>
+          </div>
+          <div class="col-md-6">
+            <br />
+            <input type="number" class="form-control"  placeholder="Pin Code" id="PINBloodDonation" name="PINBloodDonation" oninput="CHECK_PIN(this)" required>
+          </div>
+            
+          <div class="col-md-12">
+            <br>
+          </div>
+          <input type="submit" class="btn btn-primary" style="margin: auto auto;" id="SubmitBloodDonation" name="SubmitBloodDonation">
+         
+      </div>
+    </form>
+    <br>
+    <p style="text-align: center;">Already have an account or donated earlier? Login <a href="BloodDonationLogin.html">here</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-section bg-primary py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 mb-4 mb-md-0">
+          <h2 class="mb-0 text-white">What are you waiting for?</h2>
+          </div>
+        <div class="col-lg-5 text-md-right">
+          <a href="#" class="btn btn-primary btn-white">Contact us now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer class="site-footer py-5">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-4">
+
+          <!-- <div class="text-center quick-contact-info">
+            <div class="mb-3 icon-wrap">
+              <span class="icon-phone"></span>
+            </div>
+            <span class="caption">+91-81968-10815</span>
+          </div>
+
+        </div>
+        <div class="col-lg-4">
+
+          <div class="text-center quick-contact-info">
+            <div class="mb-3 icon-wrap">
+              <span class="icon-room"></span>
+            </div>
+            <span class="caption">2130 Fulton Street San Diego,
+              CA 94117-1080 USA</span>
+          </div>
+
+        </div>
+        <div class="col-lg-4">
+
+          <div class="text-center quick-contact-info">
+            <div class="mb-3 icon-wrap">
+              <span class="icon-envelope-o"></span>
+            </div>
+            <span class="caption">info@mydomain.com</span>
+          </div> -->
+
+        </div>
+      </div>
+
+
+      <div class="row pt-5 mt-5 text-center">
+        <div class="col-lg-7 text-lg-left">
+          <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+        <div class="col-lg-5 text-lg-right">
+          <a href="#" class="ml-3">Terms</a>
+          <a href="#" class="ml-3">Privacy</a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  </div>
+  <script>
+    function match_password(input){
+      var set_password = document.getElementById("SetPasswordBloodDonation");
+      var confirm_password = document.getElementById("ConfirmPasswordBloodDonation")
+      if(set_password.value == confirm_password.value){
+        set_password.setCustomValidity("")
+      }
+      else
+      {
+        set_password.setCustomValidity("Passwords Don't Match");
+      }
+
+    }
+  </script>
+  <script src="js/validation.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Apply for Receiving Blood</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/aos.css">
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+  <div class="site-wrap" id="home-section">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+
+    <header class="site-navbar site-navbar-target" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center position-relative">
+
+          <div class="col-3">
+            <div class="site-logo">
+              <a href="index.html">Haemotology<span class="text-primary">.</span> </a>
+            </div>
+          </div>
+
+          <div class="col-9 text-right">
+
+            <span class="d-inline-block d-lg-none"><a href="#" class=" site-menu-toggle js-menu-toggle py-5 "><span
+                  class="icon-menu h3 text-white"></span></a></span>
+
+
+            <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav ml-auto ">
+
+                <li><a href="BloodBankHome.html" class="nav-link">Blood Bank Home</a></li>
+                <li><a href="donationregister" class="nav-link">Donate Blood</a></li>
+                <li class="active"><a href="BloodReceiver.html" class="nav-link">Receive Blood</a></li>
+                <li><a href="blood-bank-employee-login.html" class="nav-link">Blood Bank Login</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+
+
+        </div>
+      </div>
+
+    </header>
+
+
+    <div class="hero" style="background-image: url('images/hero_bg_1.jpg');">
+      <!--put own background image here-->
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-8 intro text-center">
+            <h1 class="text-white">Need Blood? Apply here without delay!</h1>
+            <a href="index.html">Home</a> <span class="mx-3 text-white">/</span> <strong class="text-white">Receive
+              Blood</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section">
+      <div class="container">
+
+        <form class="row g-3" action="receiverrequests" method="post" enctype="multipart/form-data">
+          <div class="col-md-6">
+            <label for="FirstNameBloodReception" class="form-label">First Name <span
+                style="color: red;">*</span></label>
+            <input type="text" class="form-control" id="FirstNameBloodReception" name="FirstNameBloodReception"
+              placeholder="First Name" required>
+          </div>
+          <div class="col-md-6">
+            <label for="LastNameBloodReception" class="form-label">Last Name</label>
+            <input type="text" class="form-control" placeholder="Last Name" name="LastNameBloodReception"
+              id="LastNameBloodReception">
+          </div>
+
+          <div class="col-md-6">
+            <br />
+            <label class="form-label">
+              Age<span style="color: red;">*</span>
+            </label>
+            <input type="number" class="form-control" placeholder="18 years" id="AgeBloodReception"
+              name="AgeBloodReception" required />
+
+          </div>
+          <div class="col-md-6">
+            <br />
+            <label class="form-label">
+              Blood Group<span style="color: red;">*</span>
+            </label>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="BloodGroupBloodReception" id="APOSBloodReception"
+                    value="A+">
+                  <label class="form-check-label" for="APOSBloodReception">
+                    A+
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="BloodGroupBloodReception" id="BPOSBloodReception"
+                    value="B+">
+                  <label class="form-check-label" for="BPOSBloodReception">
+                    B+
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="BloodGroupBloodReception" id="OPOSBloodReception"
+                    value="O+">
+                  <label class="form-check-label" for="OPOSBloodReception">
+                    O+
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="BloodGroupBloodReception" id="ABPOSBloodReception"
+                    value="AB+">
+                  <label class="form-check-label" for="ABPOSBloodReception">
+                    AB+
+                  </label>
+                </div>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="BloodGroupBloodReception" id="ANEGBloodReception"
+                    value="A-">
+                  <label class="form-check-label" for="ANEGBloodReception">
+                    A-
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="BloodGroupBloodReception" id="BNEGBloodReception"
+                    value="B-">
+                  <label class="form-check-label" for="BNEGBloodReception">
+                    B-
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="BloodGroupBloodReception" id="ONEGBloodReception"
+                    value="O-">
+                  <label class="form-check-label" for="ONEGBloodReception">
+                    O-
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="BloodGroupBloodReception" id="ABNEGBloodReception"
+                    value="AB-">
+                  <label class="form-check-label" for="ABNEGBloodReception">
+                    AB-
+                  </label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <br />
+            <label class="form-label" for="MobileBloodReception">
+              Mobile<span style="color: red;">*</span>
+            </label>
+            <input type="number" class="form-control" name="MobileBloodReception" id="MobileBloodReception"
+              placeholder="9876543210" oninput="check_phone(this)" required />
+
+          </div>
+          <div class="col-md-6">
+            <br />
+            <label class="form-label" for="EmailBloodReception">
+              Correspondence E-mail<span style="color: red;">*</span>
+            </label>
+            <input type="email" class="form-control" name="EmailBloodReception" id="EmailBloodReception"
+              placeholder="someone@example.com" oninput="check_email(this)" required />
+
+          </div>
+
+          <div class="col-md-12">
+            <div class="row">
+
+              <div class="col-md-12">
+                <label class="form-label">
+                  <br>
+                  Upload Blood Request Slip<span style="color: red;">*</span>
+                </label>
+                <input type="file" class="form-control" id="BloodRequestSlipBloodReception"
+                  name="BloodRequestSlipBloodReception" required accept="image/*" oninput="VerifyUploadSizeIsOK(this)">
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label>Nearest Blood Bank (Detected Automatically)</label>
+            <br>
+            <input type="text" name="BloodReceiverBank" value="<%= bloodbankreceiver %>" class="form-control">
+            <br>
+          </div>
+          <input type="submit" id="SubmitBloodReception" name="SubmitBloodReception" class="btn btn-primary"
+            style="margin: auto auto;">
+      </div>
+      </form>
+    </div>
+  </div>
+  </div>
+
+  <div class="site-section bg-primary py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 mb-4 mb-md-0">
+          <h2 class="mb-0 text-white">What are you waiting for?</h2>
+        </div>
+        <div class="col-lg-5 text-md-right">
+          <a href="#" class="btn btn-primary btn-white">Contact us now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer class="site-footer py-5">
+    <div class="container">
+
+      <!-- <div class="row">
+        <div class="col-lg-4">
+
+          <div class="text-center quick-contact-info">
+            <div class="mb-3 icon-wrap">
+              <span class="icon-phone"></span>
+            </div>
+            <span class="caption">1-800-1234-902</span>
+          </div>
+
+        </div>
+        <div class="col-lg-4">
+
+          <div class="text-center quick-contact-info">
+            <div class="mb-3 icon-wrap">
+              <span class="icon-room"></span>
+            </div>
+            <span class="caption">2130 Fulton Street San Diego,
+              CA 94117-1080 USA</span>
+          </div>
+
+        </div>
+        <div class="col-lg-4">
+
+          <div class="text-center quick-contact-info">
+            <div class="mb-3 icon-wrap">
+              <span class="icon-envelope-o"></span>
+            </div>
+            <span class="caption">info@mydomain.com</span>
+          </div>
+
+        </div>
+      </div> -->
+
+
+      <div class="row pt-5 mt-5 text-center">
+        <div class="col-lg-7 text-lg-left">
+          <p>
+            <p>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;<script>
+                document.write(new Date().getFullYear());
+              </script> All rights reserved | This template is made with <i class="icon-heart text-danger"
+                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </p>
+        </div>
+        <div class="col-lg-5 text-lg-right">
+          <a href="#" class="ml-3">Terms</a>
+          <a href="#" class="ml-3">Privacy</a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  </div>
+  <script type="text/javascript">
+    function VerifyUploadSizeIsOK(input)
+    {
+       /* Attached file size check. Will Bontrager Software LLC, https://www.willmaster.com */       
+       var MaxSizeInBytes = 2097152;
+       var fld = document.getElementById("BloodRequestSlipBloodReception");
+       if( fld.files && fld.files.length == 1 && fld.files[0].size > MaxSizeInBytes )
+       {
+         input.setCustomValidity("The file size must be no more than " + parseInt(MaxSizeInBytes/1024/1024) + "MB");
+          
+       }
+       else{
+         input.setCustomValidity("");
+       }
+    } // function VerifyUploadSizeIsOK()
+    </script>
+    
+
+  <script src="js/validation.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -100,7 +100,9 @@ app.post('/dummyreceiver.html', function (req, res) {
 
     });
 });
-
+app.get("/BloodDonation.html", (req,res)=>{
+res.redirect("donationregister");
+});
 app.get("/donationregister", function (req, res) {
     res.render('blooddonation.ejs', {
         error: "",
@@ -182,7 +184,7 @@ app.post("/donorlogin", function (req, res) {
                     if (result === true) {
                         //code for fetching blood banks
                         var chunks = [];
-                        let url = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=blood%20bank%20${data.city}&inputtype=textquery&key=${process.env.APIKEY}`;
+                        let url = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Cgeometry&input=blood%20bank%20${data.addressl2}%20${data.city}&inputtype=textquery&key=${process.env.APIKEY}`;
 
                         https.get(url, function (response) {
                             if (response.statusCode === 200) {

@@ -738,7 +738,7 @@ app.post("/afterapproved", function (req, res) {
                     }
 
                 } else if (req.body.bloodgroupreceived == "O-") {
-                    if (ONRG < Number(req.body.bloodgroupunits)) {
+                    if (ONEG < Number(req.body.bloodgroupunits)) {
                         res.render('failure.ejs', {message: "Low on Blood"});
 
                     } else {

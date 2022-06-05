@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Welcome <%=donor.fname %></title>
+  </head>
+  <body>
+    <!-- Optional JavaScript; choose one of the two! -->
+    <div class="row" style="background-color:#2fc4b2; padding: auto auto;">
+    <div class="col-md-1"></div>
+    <div class="col-md-3" style="color: #ffffff;"><strong>Welcome <%= donor.fname %></strong></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-3" style="text-align: right; color: #ffffff;"><a href="/" style="color: #ffffff;"><strong>Log Out</strong></a></div>
+    <div class="col-md-1"></div>
+    </div>
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+            <strong>View Profile</strong>
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+          <div class="accordion-body">
+            <div class="col-md-6" style="margin: auto auto; text-align: center; border: 1px solid black">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Profile</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">First Name</th>
+                  <td><%= donor.fname %></td>
+                </tr>
+                <tr>
+                  <th scope="row">Last Name</th>
+                  <td><%= donor.lname %></td>
+                </tr>
+                <tr>
+                  <th scope="row">Age</th>
+                  <td><%= donor.age %></td>
+                </tr>
+                <tr>
+                  <th scope="row">Blood Group</th>
+                  <td><%= donor.bloodgroup %></td>
+                </tr>
+                <tr>
+                  <th scope="row">Email</th>
+                  <td><%= donor.donoremail %></td>
+                </tr>
+                <tr>
+                  <th scope="row">City</th>
+                  <td><%= donor.city %></td>
+                </tr>
+                 <tr>
+                  <th scope="row">State</th>
+                  <td><%= donor.state %></td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+           <strong>New Blood Donation Request</strong>
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
+          <div class="accordion-body">
+           <form action="submitdonorrequest" method="post">
+            <label for="bloodbankselect">Select Blood Bank</label><br><br>
+            <select class="form-select" aria-label="Blood Bank Select" name="bloodbankselect">
+              
+              <option value="<%= banks[0] %>" selected><%= banks[0] %></option>
+              <% for(let i=1;i<banks.length;i++){ %>
+                <option value=" <%= banks[i] %> "><%= banks[i] %></option>
+              <% } %>
+              
+            </select>
+            <br>
+            <label for="donordate">Preferred Date of Donation</label> <br><br>
+            <input type="hidden" name="dashboardbloodgroup" value="<%=donor.bloodgroup%>">
+            <input type="hidden" name="dashboardemail" value="<%=donor.donoremail%>">
+            <input type="date" class="form-control" name="donordate" id="blood_donation_date" required> <br><br>
+            <input type="submit" class="btn btn-primary" value="Submit">
+           </form>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
+            <strong>Existing Requests</strong>
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+          <div class="accordion-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Request ID</th>
+                    <th scope="col">Date Selected</th>
+                    <th scope="col">Blood Bank</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for(i = 0; i<existingrequests.length; i++) {%>
+                    <tr>
+                      <td><%=existingrequests[i]._id%></td>                  
+                      <td><%=existingrequests[i].dateselected.toDateString()%></th>
+                      <td><%=existingrequests[i].bloodbank%></td>
+                      <td><%=existingrequests[i].statusfordonation%></td>
+                      <td></td>
+                    </tr>
+                    <%}%>                          
+                                 
+                </tbody>
+              </table>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.addEventListener( "pageshow", function ( event ) {
+  var historyTraversal = event.persisted || ( typeof window.performance != "undefined" && window.performance.navigation.type === 2 );
+  if ( historyTraversal ) {
+    // Handle page restore.
+    //alert('refresh');
+    window.location.reload();
+  }
+});
+      Date.prototype.addDays = function(days) {
+    var date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days); //this is used to javascript
+    return date;
+    }
+   var today = new Date();
+   var maxdate = today.addDays(7);   
+      var dd = maxdate.getDate();
+      var mm = maxdate.getMonth()+1; //January is 0!
+      var yyyy = maxdate.getFullYear();
+      if(dd<10){
+              dd='0'+dd
+          } 
+          if(mm<10){
+              mm='0'+mm
+          } 
+
+      var maxdateformat = yyyy+'-'+mm+'-'+dd;
+      
+
+      var ddd = today.getDate();
+      var mmm = today.getMonth()+1; //January is 0!
+      var yyyyy = today.getFullYear();
+      if(ddd<10){
+              ddd='0'+ddd
+          } 
+          if(mmm<10){
+              mmm='0'+mmm
+          } 
+
+      var mindateformat = yyyyy+'-'+mmm+'-'+ddd;
+      
+
+      document.getElementById("blood_donation_date").setAttribute("max", maxdateformat);
+      document.getElementById("blood_donation_date").setAttribute("min", mindateformat);
+    </script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

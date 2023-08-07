@@ -5,4 +5,4 @@ Capstone CPG-109
 <br> Data Visualisation Portal
 
 ### Video
-https://www.youtube.com/watch?v=V0fBZTr24xA&t=5s
+https://youtu.be/57LPL9ZcRL8
